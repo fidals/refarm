@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'refarm.wsgi.application'
+WSGI_APPLICATION = 'proto.wsgi.application'
 
 
 # Database
