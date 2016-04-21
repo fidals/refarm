@@ -16,6 +16,3 @@
 [submodule "connector"]
 	path = connector
 	url = https://github.com/fidals/connector
-[submodule "rf_catalog"]
-	path = rf_catalog
-	url = https://github.com/fidals/refarm-catalog

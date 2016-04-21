@@ -18,5 +18,5 @@ from .views import index
 
 urlpatterns = [
     url(r'^$', index),
-    url(r'^catalog/', include('rf_catalog.catalog.urls'))
+    url(r'^catalog/', include('catalog.urls'))
 ]
