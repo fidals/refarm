@@ -3,7 +3,7 @@ Basic (default) views for Catalog app.
 """
 
 from django.shortcuts import render
-from rf_catalog.catalog.models import Category, Product
+from catalog.models import Category, Product
 
 
 def index(request):
