@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'catalog',
-    'mptt'
+    'mptt',
+    'ecommerce',
+    'catalog'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -130,3 +131,12 @@ TEMPLATE_LOADERS = (
     'django_jinja.loaders.FileSystemLoader',
 
 )
+
+"""
+Settings for eCommerce app.
+"""
+CART_ID = 'cart'
+PRODUCT_MODEL = 'catalog.Product'
+SEND_MAIL = True
+SHOP_EMAIL = 'info@shopelectro.ru'
+EMAIL_SUBJECT = 'Object {order.id}'
