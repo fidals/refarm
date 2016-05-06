@@ -139,4 +139,4 @@ CART_ID = 'cart'
 PRODUCT_MODEL = 'catalog.Product'
 SEND_MAIL = True
 SHOP_EMAIL = 'info@shopelectro.ru'
-EMAIL_SUBJECT = 'Object {order.id}'
+EMAIL_SUBJECT = 'Order {order.id}'
