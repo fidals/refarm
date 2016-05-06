@@ -1,0 +1,17 @@
+<h1>Product{{ product.name }} </h1>
+
+<p>Price:{{ product.price }} </p>
+
+<p>In stock:{{ product.in_stock }} </p>
+
+<p>Category:</p>
+<a href="{% url 'catalog:category' product.category.id %}">
+  {{ product.category.name }}
+</a>
+
+<h2>Buy</h2>
+<form action="{% url "ecommerce:cart_add" product.id %}" method="post">
+    {% csrf_token %}
+    <input type="number" name="quantity" min="1" max="100" value="1">
+    <input type="submit" value="Add to cart">
+</form>
