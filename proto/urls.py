@@ -18,8 +18,9 @@ from django.contrib import admin
 from .views import index
 
 urlpatterns = [
-    url(r'^$', index, name='index'),
+    url(r'^$', index),
     url(r'^admin/', admin.site.urls),
     url(r'^catalog/', include('catalog.urls')),
+    url(r'^blog/', include('blog.urls')),
     url(r'^shop/', include('ecommerce.urls'))
 ]

@@ -13,8 +13,11 @@ def index(request):
     :param request:
     :return: HttpResponse
     """
-    roots = Category.objects.root_nodes()
+    root_categories = Category.objects.root_nodes()
     top_products = Product.objects.filter(is_popular=True)
 
     return render(
-        request, 'proto/main.html', {'roots': roots, 'top': top_products})
+        request, 'proto/main.html', {
+            'root_categories': root_categories,
+            'top_products': top_products,
+        })

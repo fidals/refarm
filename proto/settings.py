@@ -37,9 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'macros',
     'mptt',
     'ecommerce',
-    'catalog'
+    'seo',
+    'catalog',
+    'blog',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -80,10 +83,8 @@ WSGI_APPLICATION = 'proto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': '/etc/mysql/my.cnf',
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'refarm.sqlite3'
     }
 }
 
@@ -126,11 +127,24 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-TEMPLATE_LOADERS = (
-    'django_jinja.loaders.AppLoader',
-    'django_jinja.loaders.FileSystemLoader',
+# refarm-blog config
+# Each post type can have it's own alias
+# For config below, page types will have different urls:
+# - article: /blog/1/
+# - news: /blog/news/1/
+# - navigation: /blog/navigation/1/
+# All aliases in config will be trimmed with "/" symbol
+APP_BLOG_POST_TYPES = {
+    'article': {'name': 'Articles', 'alias': '', 'default': True},
+    'news': {'name': 'Daily news', 'alias': 'news'},
+    'navigation': {'name': 'Navigation', 'alias': 'navigation'},
+}
 
-)
+CRUMBS = {
+    'main': 'Главная',
+    'catalog': 'Каталог',
+    'blog': 'Список страниц',
+}
 
 """
 Settings for eCommerce app.
