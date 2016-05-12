@@ -140,9 +140,11 @@ APP_BLOG_POST_TYPES = {
     'navigation': {'name': 'Navigation', 'alias': 'navigation'},
 }
 
-MAIN_PAGE = 'Main'
-CATALOG_PAGE = 'Catalog'
-BLOG_PAGE = 'Pages'
+CRUMBS = {
+    'main': 'Главная',
+    'catalog': 'Каталог',
+    'blog': 'Список страниц',
+}
 
 """
 Settings for eCommerce app.
